@@ -1,0 +1,24 @@
+﻿@model TorrServ.ViewModels.CreateUserViewModel
+@{
+    ViewBag.Title = "Add users";
+}
+
+<form asp-action="Create" asp-controller="IdentityUser">
+    <div asp-validation-summary="All" class="btn-dark"></div>
+    <div class="form-group btn-dark">
+        <label asp-for="Email" class="custom-control-label">Email</label>
+        <input type="text" asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group btn-dark">
+        <label asp-for="Password" class="custom-control-label">Email</label>
+        <input type="text" asp-for="Password" class="form-control" />
+    </div>
+    <div class="form-group btn-dark">
+        <label asp-for="Year" class="custom-control-label">Email</label>
+        <input type="number" asp-for="Year" class="form-control" />
+    </div>
+    <div class="form-group btn-dark">
+        <input type="submit" value="Add" class="btn btn-secondary"/>
+    </div>
+
+</form>

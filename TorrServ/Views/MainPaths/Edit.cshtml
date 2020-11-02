@@ -1,0 +1,21 @@
+﻿@model TorrServData.Models.SourceOfMovies
+@{
+    ViewBag.Title = "Edit Path";
+}
+
+    <form asp-action="Edit" asp-controller="MainPaths">
+        <div asp-validation-summary="All" class="btn-dark"></div>
+        <div class="form-group">
+            <input type="hidden" asp-for="Id" />
+        </div>
+        <div class="form-group">
+            <h1>Currently Path @Model.path </h1>
+        </div>
+        <div class="form-group">
+            <label asp-for="path" class="text-white">path</label>
+            <input type="text" asp-for="path" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-dark" />
+        </div>
+    </form>

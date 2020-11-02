@@ -1,0 +1,88 @@
+﻿@model IEnumerable<TorrServData.Models.TorrentMovie>
+@{
+    //Layout = null;
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>   
+    @*<script src="~/js/scroll.js"></script>*@
+</head>
+<body>  
+    @*<div >
+        <div id="scrollArea">scrollArea</div>
+    </div>*@
+    <div class="">         
+        <table id="dataTable" class="table">
+            <thead>
+                <tr>
+                    <th ><button id="Btn_Title" type="button" class="btn btn-dark text-white">Title</button></th>
+                    <th><button id="Btn_Genre" type="button" class="btn btn-dark"> Genre </button></th>
+                    <th><button id="Btn_Country" type="button" class="btn btn-dark">Country</button></th>
+                    <th><button id="Btn_EarOfIssue" type="button" class="btn btn-dark">EarOfIssue</button></th>
+                    <th><button id="Btn_VideoQuality" type="button" class="btn btn-dark">VideoQuality</button></th>
+                    <th><button id="Btn_Size" type="button" class="btn btn-dark">Size</button></th>
+                    <th><button id="Btn_CommentIndex" class="btn btn-dark">CommIndex</button></th>
+                    <th><button id="Btn_Downloads" type="button" class="btn btn-dark">Downloads</button></th>
+                    <th><button id="Btn_PathDowLoad" type="button" class="btn btn-dark">PathDowLoad</button></th>
+                </tr>   
+                @*<tr>                    
+                    <td><div class="btn text-white">Enter a search parameter:</div></td>
+                </tr>*@
+                <tr>                   
+                    <th><input id="Inp_Title" class="btn btn-dark text-white" size="7" /></th>
+                    <th><input id="Inp_Genre" class="btn btn-dark text-white" size="4" /></th>
+                    <th><input id="Inp_Country" class="btn btn-dark text-white" size="3" /></th>
+                    <th><input id="Inp_EarOfIssue" class="btn btn-dark text-white" size="7" /></th>
+                    <th><input id="Inp_VideoQuality" class="btn btn-dark text-white" size="7" /></th>
+                    <th><input id="Inp_Size" class="btn btn-dark text-white" size="7" /></th>
+                    <th><input id="Inp_CommentIndex" class="btn btn-dark text-white" size="7" value="min" name="name" /></th>
+                    <th><input id="Inp_Downloads" class="btn btn-dark text-white" size="7" /></th>
+                    <th><input id="Inp_PathDowLoad" class="btn btn-dark text-white" size="8" /></th>
+                </tr>
+            </thead>
+            <tbody id="moviescontainer">
+                
+                @*@for (int i = 0; i<10 && i < Model.Count() - 1; i++)
+                {
+                <tr id="moviePack" class="btn-dark">                    
+
+                    <td>@Model.ToList()[i].title</td>
+                    <td>@Model.ToList()[i].genre</td>
+                    <td>@Model.ToList()[i].country</td>
+                    <td>@Model.ToList()[i].earOfIssue</td>
+                    <td>@Model.ToList()[i].videoQuality</td>
+                    <td>@Model.ToList()[i].size</td>
+                    <td>@Model.ToList()[i].commentIndex</td>
+                    <td>@Model.ToList()[i].downloads</td>
+                    <td><a href="@Model.ToList()[i].pathDownLoad">Download</a></td>
+                </tr>
+                }*@
+
+
+                @foreach (var mov in Model)
+                {
+
+                    <tr id="moviePack" class="btn-dark">
+                        <td><div class="title">@mov.title</div></td>
+                        <td>@mov.genre</td>
+                        <td>@mov.country</td>
+                        <td>@mov.earOfIssue</td>
+                        <td>@mov.videoQuality</td>
+                        <td>@mov.size</td>
+                        <td>@mov.commentIndex</td>
+                        <td>@mov.downloads</td>
+                        <td><a href="@mov.pathDownLoad">Download</a></td>
+                    </tr>
+                }
+
+            </tbody>            
+        </table>    
+        @*<div id="testcontainer">testcontainer</div>*@
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<TorrServData.Models.TorrentMovie>
+
+@foreach (var mov in Model)
+{
+
+    <tr class="btn-dark">
+        <td>@mov.title</td>
+        <td>@mov.genre</td>
+        <td>@mov.country</td>
+        <td>@mov.earOfIssue</td>
+        <td>@mov.videoQuality</td>
+        <td>@mov.size</td>
+        <td>@mov.commentIndex</td>
+        <td>@mov.downloads</td>
+        <td><a href="@mov.pathDownLoad">Download</a></td>
+    </tr>
+
+
+}

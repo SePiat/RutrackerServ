@@ -1,0 +1,22 @@
+﻿@model IEnumerable<TorrServData.Models.SourceOfMovies>
+@{
+    ViewBag.Title = "List of users ";
+}
+
+<h2 class="text-white">List of users</h2>
+<table class="table text-white">
+    @foreach (var path in Model)
+    {
+        <tr>
+            <td>@path.path</td>
+
+            <td>
+                <form asp-action="Delete" asp-route-Id="@path.Id" method="post">
+                    <a class="btn btn-dark" asp-action="Edit" asp-route-id="@path.Id">ChangePath</a>                    
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+<a class="btn badge-dark" asp-action="Create">AddPath</a>

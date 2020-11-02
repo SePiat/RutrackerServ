@@ -1,0 +1,22 @@
+﻿@model TorrServ.ViewModels.EditUserViewModel
+@{
+    ViewBag.Title = "Edit user";
+}
+
+    <form asp-action="Edit" asp-controller="IdentityUser">
+        <div asp-validation-summary="All" class="btn-dark"></div>
+        <div class="form-group">
+            <input type="hidden" asp-for="Id" />
+        </div>
+        <div class="form-group">
+            <h1>Currently Email @Model.Email </h1>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="text-white">Email</label>
+            <input type="text" asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-dark" />
+        </div>
+    </form>

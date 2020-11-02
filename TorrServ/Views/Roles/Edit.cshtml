@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model TorrServ.ViewModels.ChangeRoleViewModel
+
+    <h2 class="text-white">Changing roles for user @Model.UserEmail</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="userId" value="@Model.UserId" />
+    <div class="form-group text-white">
+        @foreach (IdentityRole role in Model.AllRoles)
+        {
+            <input class="text-white" type="checkbox" name="roles" value="@role.Name"
+                   @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />@role.Name <br />
+        }
+    </div>
+    <button type="submit" class="btn btn-dark">Save</button>
+</form>
